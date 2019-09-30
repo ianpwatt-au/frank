@@ -1,0 +1,11 @@
+---
+- name: Customize a host
+  hosts: localhost
+  connection: local
+  
+  tasks:
+
+    - name: set vi mode
+      lineinfile:
+        path: ~/.bashrc
+        line: "set -o vi"

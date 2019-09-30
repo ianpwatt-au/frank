@@ -1,0 +1,3 @@
+== Overview
+
+A customization repo designed to adapt a host to taste - _"my way"_
