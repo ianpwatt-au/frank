@@ -11,9 +11,9 @@
         line: "set -o vi"
 
     - name: Start customizing vim
-      blockinfile:
+      lineinfile:
         path:     ~/.vimrc
         create:   yes
-        block: |
+        line: |
           set tabstop=2
           set expandtab
