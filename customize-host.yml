@@ -9,3 +9,10 @@
       lineinfile:
         path: ~/.bashrc
         line: "set -o vi"
+
+    - name: Start customizing vim
+      blockinfile:
+        path: ~/.vimrc
+        block: |
+          set tabstop=2
+          set expandtab
