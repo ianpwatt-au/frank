@@ -12,7 +12,8 @@
 
     - name: Start customizing vim
       blockinfile:
-        path: ~/.vimrc
+        path:     ~/.vimrc
+        create:   yes
         block: |
           set tabstop=2
           set expandtab
