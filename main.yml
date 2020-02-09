@@ -7,23 +7,21 @@
   vars:
     brew_packages:
       - ripgrep
-      
-
   tasks:
 
     - name: Just a simple debug
       debug:
         msg: Hello from Frank
 
-#    - name: set vi mode
-#      lineinfile:
-#        path: ~/.bashrc
-#        line: "set -o vi"
-#
-#    - name: Start customizing vim
-#      lineinfile:
-#        path:     ~/.vimrc
-#        create:   yes
-#        line: |
-#          set tabstop=2
-#          set expandtab
+    - name: set vi mode
+      lineinfile:
+        path: ~/.bashrc
+        line: "set -o vi"
+
+    - name: Start customizing vim
+      lineinfile:
+        path:     ~/.vimrc
+        create:   yes
+        line: |
+          set tabstop=2
+          set expandtab
