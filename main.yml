@@ -4,6 +4,12 @@
   connection: local
   gather_facts: false
 
+  vars:
+    base_packages:
+      - vim
+      - zsh
+      - tree
+
   tasks:
 
     - name: Just a simple debug
@@ -15,14 +21,9 @@
       package:
         name: "{{ package }}"
         state: present
-
       loop: base_packages
       loop_control:
         loop_var: package  
-      vars:  
-        - vim
-        - zsh
-        - tree
 
     - name: set vi mode
       lineinfile:
