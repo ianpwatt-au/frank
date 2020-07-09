@@ -11,6 +11,18 @@
         msg: Hello from Frank
       tags:
         - test
+    - name: Install toolchain
+      package:
+        name: "{{ package }}"
+        state: present
+
+      loop: base_packages
+      loop_control:
+        loop_var: package  
+      vars:  
+        - vim
+        - zsh
+        - tree
 
     - name: set vi mode
       lineinfile:
@@ -27,4 +39,5 @@
           set nohlsearch
           set softtabstop=2
           set shiftwidth=2
+
 
