@@ -3,7 +3,7 @@
   hosts: localhost
   connection: local
   gather_facts: false
-  become: true
+  become: false
 
   vars:
     base_packages:
@@ -16,6 +16,7 @@
     - name: Just a simple debug
       debug:
         msg: Hello from Frank
+        verbosity: 2
       tags:
         - test
 
@@ -26,8 +27,10 @@
       loop: "{{ base_packages }}"
       loop_control:
         loop_var: package  
+      become: true  
 
-#    - name: Install oh-my-zsh    
+# TODO: 
+#    - name: Install oh-my-zsh    TODO: 
 #      command: '/usr/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"'
 
     - name: set vi mode
